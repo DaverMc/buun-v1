@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true">
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/UniverseHub/src/de/buun/uni/plugin/PluginAnnotationProcessor.java" />
+        </processorPath>
+      </profile>
+      <profile name="test" enabled="true" procOnly="true">
+        <processorPath>
+          <entry name="$PROJECT_DIR$/UniverseHub/src/de/buun/uni/plugin/PluginAnnotationProcessor.java" />
+        </processorPath>
+        <module name="UniverseHub" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

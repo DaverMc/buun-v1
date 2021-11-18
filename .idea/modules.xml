@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BuildInGalaxy/BuildInGalaxy.iml" filepath="$PROJECT_DIR$/BuildInGalaxy/BuildInGalaxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UniverseHub/UniverseHub.iml" filepath="$PROJECT_DIR$/UniverseHub/UniverseHub.iml" />
+    </modules>
+  </component>
+</project>

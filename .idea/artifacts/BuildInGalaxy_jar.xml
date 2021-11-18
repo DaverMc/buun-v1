@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BuildInGalaxy:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BuildInGalaxy_jar</output-path>
+    <root id="archive" name="BuildInGalaxy.jar">
+      <element id="module-output" name="BuildInGalaxy" />
+      <element id="artifact" artifact-name="UniverseHub:jar" />
+    </root>
+  </artifact>
+</component>
