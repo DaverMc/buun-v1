@@ -7,12 +7,16 @@ public interface Table<K> {
 
     Valueset getValues(K key);
 
-    boolean addValues(K key, Valueset values);
+    void addValues(Valueset values);
 
     boolean updateValues(K key, ValuesetAction action);
 
     boolean deleteValues(K key);
 
     String getName();
+
+    void postUpdate();
+
+    Column[] columns();
 
 }
