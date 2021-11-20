@@ -4,6 +4,7 @@ import de.buun.uni.command.Command;
 import de.buun.uni.command.CommandRegistration;
 import de.buun.uni.log.Level;
 import de.buun.uni.log.Loggers;
+import de.buun.uni.sql.Database;
 import de.buun.uni.util.StopWatch;
 
 import java.io.File;
@@ -13,6 +14,7 @@ public abstract class UniversePlugin {
     private File pluginDir;
     protected PluginData data;
     private CommandRegistration commandRegistration;
+    protected Database database;
 
     public void onEnable(){
         this.data = getData();
@@ -49,6 +51,10 @@ public abstract class UniversePlugin {
         Loggers.log(Level.ERROR, "There is no PluginData annotated!");
         disable();
         return null;
+    }
+
+    public Database getDatabase(){
+        return this.database;
     }
 
     public abstract File setPluginFolder();

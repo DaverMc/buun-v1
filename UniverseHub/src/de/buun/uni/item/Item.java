@@ -63,4 +63,13 @@ public class Item {
     public boolean isGlowing() {
         return glowing;
     }
+
+    public String serialize(){
+        return "";
+    }
+
+    public static Item deserialize(String text){
+        return null;
+    }
+
 }

@@ -8,7 +8,6 @@ public class Categories {
 
     private Map<String, Category> categoryMap;
 
-
     public Categories(){
         instance = this;
     }

@@ -33,4 +33,12 @@ public class Valueset {
     public String getSQLValue(int index){
         return String.valueOf(get(index));
     }
+
+    public boolean getBoolean(int value){
+        return value == 1;
+    }
+
+    public String[] getArray(String value){
+        return value.split(",");
+    }
 }
