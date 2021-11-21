@@ -2,6 +2,7 @@ package de.buun.uni.plugin;
 
 import de.buun.uni.command.Command;
 import de.buun.uni.command.CommandRegistration;
+import de.buun.uni.lang.Languages;
 import de.buun.uni.log.Level;
 import de.buun.uni.log.Loggers;
 import de.buun.uni.sql.Database;
@@ -15,6 +16,7 @@ public abstract class UniversePlugin {
     protected PluginData data;
     private CommandRegistration commandRegistration;
     protected Database database;
+    protected Languages languages;
 
     public void onEnable(){
         this.data = getData();
@@ -51,6 +53,10 @@ public abstract class UniversePlugin {
         Loggers.log(Level.ERROR, "There is no PluginData annotated!");
         disable();
         return null;
+    }
+
+    public Languages getLanguages(){
+        return this.languages;
     }
 
     public Database getDatabase(){

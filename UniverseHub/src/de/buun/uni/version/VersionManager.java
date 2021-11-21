@@ -10,4 +10,8 @@ public class VersionManager {
         return Version.v_1_8;
     }
 
+    public static <T> T createInstance(Class<?> superior, Class<?> cv1_8, Class<?> cv_1_16){
+        return null;
+    }
+
 }
