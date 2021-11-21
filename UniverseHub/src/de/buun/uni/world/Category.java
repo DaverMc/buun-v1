@@ -12,6 +12,7 @@ public class Category {
     private final List<World> worlds;
     private final File dir;
     private Item symbol;
+    private int highestId;
 
     public Category(String name, File dir){
         this.name = name;
@@ -22,6 +23,14 @@ public class Category {
     public Category setSymbol(Item item){
         this.symbol = item;
         return this;
+    }
+
+    public void addWorld(World world){
+        if(world.getId() == -1) {
+            highestId++;
+            world.setId(highestId);
+        }
+        this.worlds.add(world);
     }
 
     public List<World> getWorlds(){

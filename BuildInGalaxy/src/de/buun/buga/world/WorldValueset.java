@@ -1,5 +1,6 @@
 package de.buun.buga.world;
 
+import de.buun.uni.math.Maths;
 import de.buun.uni.world.Category;
 import de.buun.uni.world.gen.Generators;
 import de.buun.uni.item.Item;
@@ -51,6 +52,14 @@ public class WorldValueset extends Valueset implements World {
     }
 
     @Override
+    public int getId() {
+        String s = get(0);
+        int[] i = Maths.fromString(s.split("-")[1]);
+        if(i.length == 2) return -1;
+        return i[0];
+    }
+
+    @Override
     public World setName(String name) {
         return null;
     }
@@ -82,6 +91,19 @@ public class WorldValueset extends Valueset implements World {
 
     @Override
     public World setCategory(Category category){
+        return this;
+    }
+
+    @Override
+    public World setSymbol(Item item) {
+        setValue(7, item.serialize());
+        return this;
+    }
+
+    @Override
+    public World setId(int id) {
+        String s = getCategory().name() + "-" + id;
+        setValue(0, s);
         return this;
     }
 }

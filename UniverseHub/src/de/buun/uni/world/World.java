@@ -18,6 +18,8 @@ public interface World {
 
     Category getCategory();
 
+    int getId();
+
     World setName(String name);
 
     World setLoaded(boolean load);
@@ -29,4 +31,9 @@ public interface World {
     World setStopLag(boolean on);
 
     World setCategory(Category category);
+
+    World setSymbol(Item item);
+
+    World setId(int id);
+
 }

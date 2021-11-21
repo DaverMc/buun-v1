@@ -1,12 +1,12 @@
 package de.buun.buga.command.world;
 
 import de.buun.buga.BuildInGalaxy;
+import de.buun.buga.collection.Permissions;
+import de.buun.buga.world.WorldCreationExectutor;
+import de.buun.uni.command.annotations.*;
 import de.buun.uni.world.Categories;
 import de.buun.uni.world.Category;
 import de.buun.uni.command.Command;
-import de.buun.uni.command.annotations.ArgumentRange;
-import de.buun.uni.command.annotations.CommandAliases;
-import de.buun.uni.command.annotations.CommandName;
 import de.buun.uni.entity.Entity;
 import de.buun.uni.math.Maths;
 import de.buun.uni.world.WorldGenerator;
@@ -18,7 +18,9 @@ import de.buun.uni.world.gen.Generators;
 
 @CommandName(name = "create")
 @CommandAliases(alias = "c")
+@CommandPermission(perm = Permissions.COMMAND_WORlD_CREATE)
 @ArgumentRange(min = 3, max = 4)
+@CommandDescription(desc = "Creates a world /world create [category] [name] [generatorId] {generatorData}")
 public class WorldCreateCommand extends Command {
 
     public WorldCreateCommand() {
@@ -44,6 +46,8 @@ public class WorldCreateCommand extends Command {
         if(args.length == 4){
             gen.setData(args[3].split(","));
         }
+        WorldCreationExectutor exectutor = new WorldCreationExectutor(name,category, gen);
+        exectutor.create();
     }
 
 }

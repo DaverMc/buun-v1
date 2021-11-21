@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Spigot1-16">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Test/Builders Universe/server.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

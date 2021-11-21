@@ -64,6 +64,14 @@ public abstract class Command implements ICommand {
         subCommand.run(sender, newArgs);
     }
 
+    public String getName(){
+        return this.name;
+    }
+
+    public String[] getDescription(){
+        return this.description;
+    }
+
     private Command getSubCommand(String[] args){
         for(Command cmd : this.subCommands){
             if(checkName(args[cmd.depth], cmd)){
