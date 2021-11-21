@@ -2,17 +2,14 @@ package de.buun.uni.lang;
 
 import de.buun.uni.io.LanguageFile;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Languages {
 
     private final Map<String, LanguageFile> languageFileMap;
-    private final File dir;
 
-    public Languages(File dir){
-        this.dir = dir;
+    public Languages(){
         this.languageFileMap = new HashMap<>();
     }
 

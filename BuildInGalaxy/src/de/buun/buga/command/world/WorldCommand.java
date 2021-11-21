@@ -1,5 +1,6 @@
 package de.buun.buga.command.world;
 
+import de.buun.buga.BuildInGalaxy;
 import de.buun.buga.collection.Permissions;
 import de.buun.uni.command.Command;
 import de.buun.uni.command.annotations.*;
@@ -13,6 +14,7 @@ import de.buun.uni.entity.Entity;
 public class WorldCommand extends Command {
 
     public WorldCommand(){
+        super(BuildInGalaxy.getInstance());
         this.addSubCommand(new WorldCreateCommand());
     }
 

@@ -49,6 +49,9 @@ public class MessageBuilder {
         return this;
     }
 
+    public void console(){
+        System.out.println(first.consoleValue());
+    }
     public void send(User user){
         messageSender.send(user, false, createJson());
     }

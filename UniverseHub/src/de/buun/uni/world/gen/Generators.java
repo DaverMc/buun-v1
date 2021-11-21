@@ -1,4 +1,4 @@
-package de.buun.buga.world.gen;
+package de.buun.uni.world.gen;
 
 import de.buun.uni.world.WorldGenerator;
 

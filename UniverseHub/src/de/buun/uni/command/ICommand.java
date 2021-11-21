@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface ICommand {
 
-    void run(Entity user, String[] args);
+    void run(Entity entity, String[] args);
 
-    void execute(Entity user, String[] args);
+    void execute(Entity entity, String[] args);
 
     List<Command> getSubCommands();
 

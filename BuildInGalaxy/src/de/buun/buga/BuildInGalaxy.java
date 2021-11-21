@@ -4,6 +4,7 @@ import de.buun.buga.command.world.WorldCommand;
 import de.buun.buga.world.Categories;
 import de.buun.buga.world.CategoryTable;
 import de.buun.buga.world.WorldTable;
+import de.buun.uni.io.LanguageFile;
 import de.buun.uni.plugin.PluginData;
 import de.buun.uni.plugin.UniversePlugin;
 import de.buun.uni.sql.database.SQLiteDatabase;
@@ -26,6 +27,8 @@ public class BuildInGalaxy extends UniversePlugin {
         initDatabase();
         new Categories();
         registerCommand(new WorldCommand());
+        this.languages.addLanguage(new LanguageFile(this.getPluginDir(), "en"));
+        this.languages.addLanguage(new LanguageFile(this.getPluginDir(), "de"));
     }
 
     @Override

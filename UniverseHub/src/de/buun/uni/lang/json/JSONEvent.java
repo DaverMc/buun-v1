@@ -13,6 +13,11 @@ public abstract class JSONEvent implements Message {
     }
 
     @Override
+    public String consoleValue() {
+        return "jsonEvent";
+    }
+
+    @Override
     public void setNext(Message message) {
         this.next = message;
     }

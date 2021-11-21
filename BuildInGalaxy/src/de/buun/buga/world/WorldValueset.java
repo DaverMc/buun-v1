@@ -1,6 +1,6 @@
 package de.buun.buga.world;
 
-import de.buun.buga.world.gen.Generators;
+import de.buun.uni.world.gen.Generators;
 import de.buun.uni.item.Item;
 import de.buun.uni.sql.internal.Valueset;
 import de.buun.uni.world.World;

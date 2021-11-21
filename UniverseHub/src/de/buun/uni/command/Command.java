@@ -6,7 +6,9 @@ import de.buun.uni.command.annotations.*;
 import de.buun.uni.entity.Console;
 import de.buun.uni.entity.Entity;
 import de.buun.uni.entity.User;
+import de.buun.uni.lang.MessageBuilder;
 import de.buun.uni.log.Loggers;
+import de.buun.uni.plugin.UniversePlugin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,18 +21,20 @@ public abstract class Command implements ICommand {
     protected final String[] description;
     protected final List<Command> subCommands;
     protected final String[] aliases;
+    protected final UniversePlugin plugin;
 
     protected boolean player;
     protected boolean console;
     protected int depth; //Zählt hoch wie weit der command verzweigt ist also an welcher stelle er steht
 
-    public Command(){
+    public Command(UniversePlugin plugin){
         this.subCommands = new ArrayList<>();
         this.name = name();
         this.permission = permission();
         this.argRange = argRange();
         this.description = description();
         this.aliases = aliases();
+        this.plugin = plugin;
         type();
     }
 
@@ -90,30 +94,35 @@ public abstract class Command implements ICommand {
         return newArgs;
     }
 
-    private void error(Entity entity, String path){
-
+    protected void message(Entity entity, String path, Object...args){
+        MessageBuilder builder = new MessageBuilder(this.plugin.getLanguages().getMessage(entity.getLanguage(), path, args));
+        if(entity instanceof Console){
+            builder.console();
+        }else{
+            builder.send((User) entity);
+        }
     }
 
     private boolean runChecks(Command command, Entity sender, String[] args){
         if(!player && sender instanceof User){
-            error(sender, "command.fail.justconsole");
+            message(sender, "command.fail.justconsole");
             return true;
         }
         if(!console && sender instanceof Console){
-            error(sender, "command.fail.justplayer");
+            message(sender, "command.fail.justplayer");
             return true;
         }
 
         if(args.length < command.argRange[0]){
-            error(sender, "command.fail.args.missing");
+            message(sender, "command.fail.args.missing");
             return true;
         }else if(args.length > command.argRange[1]){
-            error(sender, "command.fail.args.toomany");
+            message(sender, "command.fail.args.toomany");
             return true;
         }
 
         if(!sender.hasPermission(command.permission)){
-            error(sender, "command.fail.permission");
+            message(sender, "command.fail.permission");
             return true;
         }
 

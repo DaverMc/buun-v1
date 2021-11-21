@@ -27,6 +27,7 @@ public abstract class UniversePlugin {
     private void initialise(){
         this.pluginDir = setPluginFolder();
         this.commandRegistration = new CommandRegistration(this);
+        this.languages = new Languages();
         onInitialisation();
     }
 

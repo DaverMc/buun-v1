@@ -26,4 +26,9 @@ public class MessageNode implements Message {
         this.next = message;
     }
 
+    @Override
+    public String consoleValue() {
+        return this.value;
+    }
+
 }

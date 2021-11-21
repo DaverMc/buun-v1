@@ -7,4 +7,6 @@ public interface Message {
     String toJson();
 
     void setNext(Message message);
+
+    String consoleValue();
 }
