@@ -16,7 +16,17 @@ public interface World {
 
     int getActiveVersion();
 
+    Category getCategory();
 
+    World setName(String name);
 
+    World setLoaded(boolean load);
 
+    World setWorldGenerator(WorldGenerator generator);
+
+    World setActiveVersion(int version);
+
+    World setStopLag(boolean on);
+
+    World setCategory(Category category);
 }

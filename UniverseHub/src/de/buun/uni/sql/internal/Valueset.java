@@ -41,4 +41,17 @@ public class Valueset {
     public String[] getArray(String value){
         return value.split(",");
     }
+
+    public int fromBoolean(boolean bool){
+        if(bool) return 1;
+        return 0;
+    }
+
+    public String fromArray(String[] array){
+        StringBuilder builder = new StringBuilder();
+        for(String s : array){
+            builder.append(s).append(",");
+        }
+        return builder.substring(0, builder.length() - 2);
+    }
 }

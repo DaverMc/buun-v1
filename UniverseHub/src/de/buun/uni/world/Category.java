@@ -1,7 +1,6 @@
-package de.buun.buga.world;
+package de.buun.uni.world;
 
 import de.buun.uni.item.Item;
-import de.buun.uni.world.World;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,18 +1,14 @@
 package de.buun.buga.command.world;
 
 import de.buun.buga.BuildInGalaxy;
-import de.buun.buga.world.Categories;
-import de.buun.buga.world.Category;
+import de.buun.uni.world.Categories;
+import de.buun.uni.world.Category;
 import de.buun.uni.command.Command;
 import de.buun.uni.command.annotations.ArgumentRange;
 import de.buun.uni.command.annotations.CommandAliases;
 import de.buun.uni.command.annotations.CommandName;
-import de.buun.uni.entity.Console;
 import de.buun.uni.entity.Entity;
-import de.buun.uni.entity.User;
-import de.buun.uni.lang.MessageBuilder;
 import de.buun.uni.math.Maths;
-import de.buun.uni.plugin.UniversePlugin;
 import de.buun.uni.world.WorldGenerator;
 import de.buun.uni.world.gen.Generators;
 

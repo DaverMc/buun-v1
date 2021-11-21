@@ -1,5 +1,6 @@
 package de.buun.buga.world;
 
+import de.buun.uni.world.Category;
 import de.buun.uni.world.gen.Generators;
 import de.buun.uni.item.Item;
 import de.buun.uni.sql.internal.Valueset;
@@ -42,5 +43,45 @@ public class WorldValueset extends Valueset implements World {
     @Override
     public int getActiveVersion() {
         return get(6);
+    }
+
+    @Override
+    public Category getCategory() {
+        return null;
+    }
+
+    @Override
+    public World setName(String name) {
+        return null;
+    }
+
+    @Override
+    public World setLoaded(boolean load) {
+        setValue(2, fromBoolean(load));
+        return this;
+    }
+
+    @Override
+    public World setWorldGenerator(WorldGenerator generator) {
+        setValue(4, generator.getId());
+        setValue(5, fromArray(generator.getData()));
+        return null;
+    }
+
+    @Override
+    public World setActiveVersion(int version) {
+        setValue(6, version);
+        return this;
+    }
+
+    @Override
+    public World setStopLag(boolean on) {
+        setValue(3, fromBoolean(on));
+        return this;
+    }
+
+    @Override
+    public World setCategory(Category category){
+        return this;
     }
 }

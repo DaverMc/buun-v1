@@ -1,7 +1,7 @@
 package de.buun.buga;
 
 import de.buun.buga.command.world.WorldCommand;
-import de.buun.buga.world.Categories;
+import de.buun.uni.world.Categories;
 import de.buun.buga.world.CategoryTable;
 import de.buun.buga.world.WorldTable;
 import de.buun.uni.io.LanguageFile;

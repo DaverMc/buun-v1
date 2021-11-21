@@ -76,4 +76,8 @@ public abstract class AbstractDatabase implements Database {
             return false;
         }
     }
+
+    public <T> T getTable(String id){
+        return (T) this.tableMap.get(id.toLowerCase());
+    }
 }

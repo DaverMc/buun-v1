@@ -1,4 +1,4 @@
-package de.buun.buga.world;
+package de.buun.uni.world;
 
 import java.util.Map;
 

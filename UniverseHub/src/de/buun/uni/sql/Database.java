@@ -25,4 +25,6 @@ public interface Database {
 
     boolean isConnected();
 
+    <T> T getTable(String id);
+
 }
