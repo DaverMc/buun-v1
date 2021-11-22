@@ -60,7 +60,7 @@ public class SQLCommands {
     }
 
     protected static void createTable(Database database, String tableName, Column...columns){
-        StringBuilder sqlCommand = new StringBuilder("CREATE TABLE IF NOT EXIST ")
+        StringBuilder sqlCommand = new StringBuilder("CREATE TABLE IF NOT EXISTS ")
                 .append(tableName)
                 .append(" (");
         for(Column c : columns){

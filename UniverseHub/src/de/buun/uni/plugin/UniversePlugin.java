@@ -1,5 +1,6 @@
 package de.buun.uni.plugin;
 
+import de.buun.uni.BuildersUniverse;
 import de.buun.uni.command.Command;
 import de.buun.uni.command.CommandRegistration;
 import de.buun.uni.lang.Languages;
@@ -8,7 +9,9 @@ import de.buun.uni.log.Loggers;
 import de.buun.uni.spigot.JoinQuitListener;
 import de.buun.uni.sql.Database;
 import de.buun.uni.util.StopWatch;
+import javafx.util.Builder;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -23,6 +26,7 @@ public abstract class UniversePlugin extends JavaPlugin {
     @Override
     public void onEnable(){
         this.data = getData();
+        Bukkit.getOnlinePlayers().forEach(p -> BuildersUniverse.addUser(p.getUniqueId()));
         Bukkit.getPluginManager().registerEvents(new JoinQuitListener(), this);
         float millis = StopWatch.stopTime(this::initialise);
         Loggers.log(Level.INFO, "Plugin " + this.data.name() + "-v." + this.data.version() +" has successfully enabled in " + millis + "ms");

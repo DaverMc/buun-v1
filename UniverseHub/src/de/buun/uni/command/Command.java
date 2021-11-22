@@ -12,7 +12,6 @@ import de.buun.uni.plugin.UniversePlugin;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public abstract class Command implements ICommand {
 
@@ -53,13 +52,11 @@ public abstract class Command implements ICommand {
     @Override
     public void execute(Entity sender, String[] args) {
         if(runLonely(sender, args)) return;
-
         Command subCommand = getSubCommand(args);
         if(subCommand == null){
             run(sender, args);
             return;
         }
-
         String[] newArgs = trim(args, subCommand.depth);
         if(runChecks(subCommand, sender, newArgs)) return;
         subCommand.run(sender, newArgs);
@@ -77,14 +74,13 @@ public abstract class Command implements ICommand {
 
     private Command getSubCommand(String[] args){
         for(Command cmd : this.subCommands){
-            System.out.println("CMD: " + cmd.getName());
-            if(checkName(args[cmd.depth], cmd)){
+            if(args.length < cmd.depth) return null;
+            if(checkName(args[cmd.depth - 1], cmd)){
                 Command subsubCommand = cmd.getSubCommand(args);
-                System.out.println("Sub: " + subsubCommand.getName());
                 if(subsubCommand != null){
                     return subsubCommand;
                 }else{
-                    return null;
+                    return cmd;
                 }
             }
         }

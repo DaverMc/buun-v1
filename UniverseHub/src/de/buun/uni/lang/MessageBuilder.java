@@ -6,6 +6,7 @@ import de.buun.uni.version.VersionManager;
 import de.buun.uni.version.v1_16.MessageSender16;
 import de.buun.uni.version.v1_8.MessageSender8;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //Um eine neue Nachricht anzufangen
@@ -64,7 +65,13 @@ public class MessageBuilder {
     }
     //Hängt alle Json Teile hintereinander und verbindet sie sodass ein zusammenhängender JSon Text entsteht bei :/n: eine neue Zeile beginnen
     private String[] createJson(){
-        return new String[0];
+        Message cursor;
+        List<String> s = new ArrayList<>();
+        s.add(first.consoleValue());
+        while((cursor = first.next())!= null){
+            s.add(cursor.consoleValue());
+        }
+        return s.toArray(new String[0]);
     }
 
     private static MessageSender getMessageSender(){

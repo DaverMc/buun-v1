@@ -26,7 +26,6 @@ public class CommandRegistrator16 implements CommandRegistrator {
             @Override
             public boolean execute(CommandSender commandSender, String s, String[] strings) {
                 Entity sender = BuildersUniverse.fromCommandSender(commandSender);
-                System.out.println(sender);
                 command.execute(sender, strings);
                 return true;
             }

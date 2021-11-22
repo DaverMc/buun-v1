@@ -16,6 +16,7 @@ public class WorldCommand extends Command {
     public WorldCommand(){
         super(BuildInGalaxy.getInstance());
         this.addSubCommand(new WorldCreateCommand());
+        this.addSubCommand(new WorldListCommand());
     }
 
     @Override

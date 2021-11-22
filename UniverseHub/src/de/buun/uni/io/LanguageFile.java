@@ -13,6 +13,7 @@ public class LanguageFile extends ReadWriteFile{
 
     public String getMessage(String path, Object...args){
         String text = get(path);
+        if(text == null) return path;
         if(args.length == 0) return text;
         for(int i = 0; i < args.length; i++){
             text = text.replace("<arg" + i + ">", String.valueOf(args[i]));
