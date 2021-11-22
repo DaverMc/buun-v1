@@ -11,10 +11,11 @@ public class IO {
     private IO(){}
 
     public static File createFile(String path){
+        File file = new File(path);
+        if(file.exists()) return file;
+        file.getParentFile().mkdirs();
         try {
-            File file = new File(path);
-            if(file.exists()) return file;
-            if(!file.createNewFile()) return null;
+            file.createNewFile();
             return file;
         }catch (IOException e){
             Loggers.log(e);

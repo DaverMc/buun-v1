@@ -2,6 +2,7 @@ package de.buun.uni.item;
 
 import de.buun.uni.collection.ItemType;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class Item {
 
     public Item(ItemType type){
         this.itemType = type;
+        this.lore = new ArrayList<>();
     }
 
     public Item setName(String name){

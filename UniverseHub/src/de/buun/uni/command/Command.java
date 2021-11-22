@@ -12,6 +12,7 @@ import de.buun.uni.plugin.UniversePlugin;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class Command implements ICommand {
 
@@ -72,14 +73,18 @@ public abstract class Command implements ICommand {
         return this.description;
     }
 
+    public String[] getAliases(){return this.aliases;}
+
     private Command getSubCommand(String[] args){
         for(Command cmd : this.subCommands){
+            System.out.println("CMD: " + cmd.getName());
             if(checkName(args[cmd.depth], cmd)){
                 Command subsubCommand = cmd.getSubCommand(args);
+                System.out.println("Sub: " + subsubCommand.getName());
                 if(subsubCommand != null){
                     return subsubCommand;
                 }else{
-                    return cmd;
+                    return null;
                 }
             }
         }

@@ -9,17 +9,10 @@ import de.buun.uni.plugin.PluginData;
 import de.buun.uni.plugin.UniversePlugin;
 import de.buun.uni.sql.database.SQLiteDatabase;
 
-import java.io.File;
-
 @PluginData(name = "BuildInGalaxy", authors = "Daver", version = "0.0.1")
 public class BuildInGalaxy extends UniversePlugin {
 
     private static BuildInGalaxy instance;
-
-    @Override
-    public File setPluginFolder() {
-        return null;
-    }
 
     @Override
     public void onInitialisation() {

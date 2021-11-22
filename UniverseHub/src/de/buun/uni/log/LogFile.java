@@ -7,6 +7,7 @@ import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class LogFile {
 
@@ -32,7 +33,7 @@ public class LogFile {
 
     public boolean isLevel(Level level) {
         if(levels == null) return true;
-        return Arrays.stream(this.levels).toList().contains(level);
+        return Arrays.stream(this.levels).collect(Collectors.toList()).contains(level);
     }
 
 }

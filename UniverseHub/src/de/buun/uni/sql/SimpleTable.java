@@ -68,8 +68,10 @@ public class SimpleTable<T> implements Table<T>{
                 .filter(set -> set.getAction() != (byte) 0)
                 .forEach(set -> {
                     switch (set.getAction()) {
-                        case 1 -> SQLCommands.insert(this.database, this.name, set);
-                        case 2 -> SQLCommands.update(this.database, this, set);
+                        case 1 :SQLCommands.insert(this.database, this.name, set);
+                        break;
+                        case 2 : SQLCommands.update(this.database, this, set);
+                        break;
                     }
                     set.setAction((byte) 0);
                 });

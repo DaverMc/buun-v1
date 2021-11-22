@@ -1,5 +1,6 @@
 package de.buun.uni.collection;
 
+import de.buun.uni.version.Version;
 import de.buun.uni.version.VersionManager;
 
 public enum ItemType {

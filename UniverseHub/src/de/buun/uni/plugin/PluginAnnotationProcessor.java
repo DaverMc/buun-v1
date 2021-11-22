@@ -49,10 +49,11 @@ public class PluginAnnotationProcessor extends AbstractProcessor {
         Element mainElement = annotatedElements.iterator().next();
         this.located = true;
 
-        if(!(mainElement instanceof TypeElement mainType)){
+        if(!(mainElement instanceof TypeElement)){
             this.error("Element is not a type!");
             return false;
         }
+        TypeElement mainType = (TypeElement) mainElement;
 
         //Braucht man nicht wirklich da ich nicht dumm programmiere
         if (!(mainType.getEnclosingElement () instanceof PackageElement) && !mainType.getModifiers ().contains (Modifier.STATIC)) {

@@ -5,7 +5,8 @@ import de.buun.uni.world.WorldCreator;
 
 public class VanillaWorldCreator8 implements WorldCreator {
     @Override
-    public void create(World world) {
-
+    public boolean create(World world) {
+        org.bukkit.WorldCreator creator = new org.bukkit.WorldCreator(world.getName());
+        return creator.createWorld() != null;
     }
 }

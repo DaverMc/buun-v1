@@ -1,6 +1,12 @@
 package de.buun.uni.sql.internal;
 
-public record ValueNode<T>(T value) {
+public class ValueNode<T> {
+
+    private final T value;
+
+    public ValueNode(T value){
+        this.value = value;
+    }
 
     public T getValue(){
         return value;
